@@ -17,13 +17,13 @@ const computerSelection = getComputerChoice().toLowerCase();
 
 function playRound() {
     if(playerSelection === computerSelection) {
-        return("It's a draw!");
+        return("It's a draw! " + (playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase()) +  " ties with " + (computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1).toLowerCase()))
     } else if(playerSelection === "paper" && computerSelection === "rock" 
     || playerSelection === "rock" && computerSelection === "scissors" 
     || playerSelection === "scissors" && computerSelection === "paper") {
-        return("Winner!")
+        return("Winner! " + (playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase()) + " beats " + (computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1).toLowerCase()))
     } else {
-        return("Loser!")
+        return("Loser! " + (computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1).toLowerCase()) + " beats " + (playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase()))
     }
 }
 
