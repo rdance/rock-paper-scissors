@@ -1,5 +1,7 @@
-let n = Math.floor(Math.random() * 3);
+let scoreTotal = 0;
+for (; scoreTotal < 5; scoreTotal++) {
 function getComputerChoice() {
+    let n = Math.floor(Math.random() * 3);
     if(n == 0) {
         return("Rock");
     } else if(n == 1) {
@@ -11,9 +13,9 @@ function getComputerChoice() {
     }
 }
 
-const playerSelection = prompt("Rock, Paper, or Scissors?", " ").toLowerCase();
-const computerSelection = getComputerChoice().toLowerCase();
 function playRound() {
+    const playerSelection = prompt("Rock, Paper, or Scissors?", " ").toLowerCase();
+    const computerSelection = getComputerChoice().toLowerCase();
     if(playerSelection === computerSelection) {
         return("It's a draw! " + (playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase()) +  " ties with " + (computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1).toLowerCase()))
     } else if(playerSelection === "paper" && computerSelection === "rock" 
@@ -25,14 +27,14 @@ function playRound() {
     }
 }
 alert(playRound());
-
-let s = 1;
-function roundScore () {
+console.log(scoreTotal);
+}
+/*function roundScore () {
+    let s = 1;
     if(playRound().includes("It's a draw!") || playRound().includes("Winner!") || playRound().includes("Loser!")) {
        return(s++); 
     } else {
         return("Nothing");
     }
 }
-
-console.log(roundScore());
+console.log(roundScore())*/
